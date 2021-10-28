@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// dd() functia predefina de sistemul laravel pentru a opri excutia codului
+// ce  este scris dupa aceasta functia
+// pur si simplu aplicatia nu merge mai departe
 // pointer pentru a intelege aceasta linie de cod
 Route::get('/', function () {
     dd('s-a oprit aici');
