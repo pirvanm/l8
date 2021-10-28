@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// pointer pentru a intelege aceasta linie de cod
 Route::get('/', function () {
     return view('welcome');
 });
+
+// vom vorba despre Nume::get()  prinde sedinta 17
