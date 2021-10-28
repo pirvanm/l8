@@ -1,0 +1,24 @@
+#1 instalare laravel 
+daca vrem sa il instalam prin compose putem accesa urmatorul
+link :
+https://laravel.com/docs/8.x#installation-via-composer
+
+#2 in terminal , in www scriem urmatoarea comanda :
+composer create-project laravel/laravel example-app
+argument 1 argument 2     argument 3    argument 4 
+
+argument 1  -> composer , comanda de terminal , definita
+create-project comanda definite in sistemul composer 
+
+argument 2 -> create-project 
+
+argument 3 -> laravel/laravel , locatia de unde descarca
+(instaleaza,pachetele(folderele de laravel))
+urmatoare forma de link de unde descarcam 
+github.com/{numePachet} = numepachet este laravel/laravel
+
+in cazul nostru descarca dupa github.com/laravel/laravel
+
+argument 4 -> example-app, numele care il dam noi proiectului
+(folderului in care avem proiectul)
+ in cazul actual argumentul este l8 ,numele folderui
