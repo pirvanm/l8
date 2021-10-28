@@ -1,3 +1,4 @@
+A. 
 #1 instalare laravel 
 daca vrem sa il instalam prin compose putem accesa urmatorul
 link :
@@ -22,3 +23,13 @@ in cazul nostru descarca dupa github.com/laravel/laravel
 argument 4 -> example-app, numele care il dam noi proiectului
 (folderului in care avem proiectul)
  in cazul actual argumentul este l8 ,numele folderui
+
+B. accesare si pornire proiect laravel
+B#1
+ls , vad daca am folderul l8 
+daca am folderul l8
+cd l8, (duma in folderul l8) 
+B#2
+pornire proiect 
+ in l8, in terminal , scriu comanda :
+ php artisan serve 
