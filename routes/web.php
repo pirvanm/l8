@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 // pointer pentru a intelege aceasta linie de cod
 Route::get('/', function () {
+    // se va explica undeva prin sedinta 25 , sau mai devreme daca se voteaza :D 
     return view('welcome');
 });
 
