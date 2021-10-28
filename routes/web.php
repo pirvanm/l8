@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 // pointer pentru a intelege aceasta linie de cod
 Route::get('/', function () {
+    return 'pagina principala se gaseste aici';
+    // se va explica undeva prin sedinta 25 , sau mai devreme daca se voteaza :D 
+    return view('welcome');
+});
+
+
+Route::get('/p2', function () {
+    return 'definirea accesului catre alta pagina se face asa';
     // se va explica undeva prin sedinta 25 , sau mai devreme daca se voteaza :D 
     return view('welcome');
 });
