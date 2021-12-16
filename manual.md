@@ -17,3 +17,9 @@ DB_PORT=3306
 DB_DATABASE=l8
 DB_USERNAME=root
 DB_DATABASe = numele bazei de date ce o avem pentru proiectul nostru
+
+
+#5 generare clase, din fisier
+php artisan make:controller MembersController
+
+php artisan make:model Members
