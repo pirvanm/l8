@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+//use App\Http\CategoriesController;
+use App\Http\Controllers\CategoriesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,4 +32,17 @@ Route::get('/p2', function () {
     return view('welcome');
 });
 
+
+    
+//Route::get('/categories/', 'CategoriesController@index')->name('categories');
+
+// Route::get('/search/', 'GameController@search')->name('search');
+// Route::post('/search/', 'GameController@search')->name('search');
+// Route::patch('/search/', 'GameController@search')->name('search');
+// Route::delete('/search/', 'GameController@search')->name('search');
+// Route::get('/search/', 'GameController@search')->name('search');
+// Route::get('/search/', 'GameController@search')->name('search');
+// Route::get('/search/', 'GameController@search')->name('search');
+//Route::get('/unde', CategoriesController::class );
+Route::resource('categories', CategoriesController::class);
 // vom vorba despre Nume::get()  prinde sedinta 17
