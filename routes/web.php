@@ -14,6 +14,11 @@ use App\Http\Controllers\CategoriesController;
 |
 */
 
+Route::get('/despre', function () {
+     
+    return view('members.index');
+});
+
 // dd() functia predefina de sistemul laravel pentru a opri excutia codului
 // ce  este scris dupa aceasta functia
 // pur si simplu aplicatia nu merge mai departe
