@@ -102,6 +102,10 @@ class GenezaController extends Controller
         //         ->where('categori_id', 1)
         //         ->update(['name' => 'numele meu e mai frumos acum']);
 
+      $games=DB::table('games')
+        ->where('categori_id', 6)
+        ->delete();
+
            // return 1 ;
           //  return 2 ;
         dd($games, 'tu esti petrecerea');
