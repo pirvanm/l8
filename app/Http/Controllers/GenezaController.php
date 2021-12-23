@@ -76,7 +76,36 @@ class GenezaController extends Controller
      */
     public function show($id)
     {
-        //
+
+        // folosim first pentru a vedea care sunt coloanele  sau cheiele 
+        // ce ne trebuie pentru a stii ce actualizam
+        // $games = DB::table('games')
+        // ->first();
+
+        // dd($games, 'coloanele sunt');
+
+        // first ia prima interogare 
+
+
+        // folosim get pentru a lua toate interograrile din tabele games
+        // $games =$games = DB::table('games')
+        //  ->get();
+
+         // cand imi mysql si vreau sa vorbesc ... cu el
+        //  $games =$games = DB::table('games')
+        //  //->toSql();
+        //  ->get();
+
+         // actuaalizare
+
+        // $games =  DB::table('games')
+        //         ->where('categori_id', 1)
+        //         ->update(['name' => 'numele meu e mai frumos acum']);
+
+           // return 1 ;
+          //  return 2 ;
+        dd($games, 'tu esti petrecerea');
+      //  dd('tu esti petrecerea?');
     }
 
     /**
@@ -87,7 +116,12 @@ class GenezaController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        dd('ruta de editare');
+        $games = 
+        $affected = DB::table('games')
+              ->where('id', 1)
+              ->update(['votes' => 1]);
     }
 
     /**
