@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 //use App\Http\CategoriesController;
 use App\Http\Controllers\CategoriesController;
+
+use App\Http\Controllers\GenezaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +51,25 @@ Route::get('/p2', function () {
 // Route::get('/search/', 'GameController@search')->name('search');
 // Route::get('/search/', 'GameController@search')->name('search');
 // Route::get('/search/', 'GameController@search')->name('search');
-//Route::get('/unde', CategoriesController::class );
-Route::resource('categories', CategoriesController::class);
-// vom vorba despre Nume::get()  prinde sedinta 17
+
+
+// in functie de versiune de laravel , poti sau nu sa defininesti o ruta in felul asta ... 
+// Route::get('/categories', 'CategoriesController@index');
+
+// definim o ruta , ('numeleRutei')
+// dupa , [] ii zici de unde incarci aceasta logica
+// ::class , static pur simplu se pune asa... 
+// dupa class , '' numele metode de unde incarci
+// informatia 
+
+// CUm se defineste o ruta in laravel 8 ... 
+//https://laravel.com/docs/8.x/routing
+// index este metoda in controller 
+Route::get('/geneza',
+ [GenezaController::class, 'index2']);
+
+
+
+// definirea a 7 rute odata dintr-o linia 
+ Route::resource('gen', GenezaController::class);
+
