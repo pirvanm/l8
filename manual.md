@@ -23,3 +23,6 @@ DB_DATABASe = numele bazei de date ce o avem pentru proiectul nostru
 php artisan make:controller MembersController
 
 php artisan make:model Members
+
+resurta utila pentru query builder
+https://laravel.com/docs/8.x/queries
