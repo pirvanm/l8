@@ -7,6 +7,21 @@ use Illuminate\Support\Facades\DB;
 
 class GenezaController extends Controller
 {
+
+    public function lista () {
+        //dd('sunt o poezie');
+        /// scriu un query builder care sa imi afiseze
+        // utilizatorii 
+
+        // get preia 
+        $users = DB::table('users')
+        ->get();
+
+        // return afiseaza
+
+        return $users;
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -48,9 +63,20 @@ class GenezaController extends Controller
     {
        // dd('dau viata si la nepotiii');
 
+       // daca nu stici care sunt coloanele...
+       // le intrebati care sunt cu ...
+
+       //$games = DB::table('games')
+        // ->first();
+
+        //dd ('coloanele sunt aici' , $games);
        DB::table('games')
        ->insert([
-        ['name' => 'picard@example.com', 'categori_id' => 6,'game_id' => 5],
+        ['name' => 'picard@example.com', 
+        'categori_id' => 6,'game_id' => 5],
+
+        //faceti un insert pentru a adauga 
+        // in tabele user 
         
     ]);
 
@@ -77,6 +103,7 @@ class GenezaController extends Controller
     public function show($id)
     {
 
+        dd('aaa', $id);
         // folosim first pentru a vedea care sunt coloanele  sau cheiele 
         // ce ne trebuie pentru a stii ce actualizam
         // $games = DB::table('games')
@@ -101,14 +128,15 @@ class GenezaController extends Controller
         // $games =  DB::table('games')
         //         ->where('categori_id', 1)
         //         ->update(['name' => 'numele meu e mai frumos acum']);
-
-      $games=DB::table('games')
-        ->where('categori_id', 6)
-        ->delete();
+        // pe baza acestui examplu stergeti userul 2
+    //   $games=DB::table('users')
+    //    // ->where('id', 2)
+    //     ->where('name','asda')
+    //     ->delete();
 
            // return 1 ;
           //  return 2 ;
-        dd($games, 'tu esti petrecerea');
+        //dd($games, 'tu esti petrecerea');
       //  dd('tu esti petrecerea?');
     }
 
@@ -123,8 +151,8 @@ class GenezaController extends Controller
 
         dd('ruta de editare');
         $games = 
-        $affected = DB::table('games')
-              ->where('id', 1)
+        $affected = DB::table('users')
+              ->where('id',  $id)
               ->update(['votes' => 1]);
     }
 

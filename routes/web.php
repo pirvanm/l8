@@ -73,3 +73,12 @@ Route::get('/geneza',
 // definirea a 7 rute odata dintr-o linia 
  Route::resource('gen', GenezaController::class);
 
+
+ Route::get('/lista',
+ [GenezaController::class, 'lista']);
+//generam ruta
+// cream metoda lista in controller ul genezaControlle
+// in metoda lista
+// scriem un query builder care sa 
+// citeasca din baza de date din 
+// tabele users
