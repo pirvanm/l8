@@ -72,7 +72,7 @@ Route::get('/geneza',
 
 // definirea a 7 rute odata dintr-o linia 
  Route::resource('gen', GenezaController::class);
-
+ Route::resource('cat', CategoriesController::class);
 
  Route::get('/lista',
  [GenezaController::class, 'lista']);
