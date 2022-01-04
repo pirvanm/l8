@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// include datele din model , recunoaste clasa Categories ca fiind clasa
+// ce preia datele din tabel
+use App\Models\Categories;
 
 class CategoriesController extends Controller
 {
@@ -13,8 +16,15 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //afisare html
-     //dd('index');
+        //varianta cu mode,
+        $categories = Categories::get();
+            dd($categories);
+        // varianta Query Builder
+        $games = DB::table('categories')
+        // in loc de games punem numele unui tabel din baza noastra de data
+        ->get();
+
+        dd("query builder way", $games);
 
      return view('categories.index');
     }
