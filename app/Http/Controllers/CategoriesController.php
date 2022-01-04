@@ -18,14 +18,29 @@ class CategoriesController extends Controller
     public function index()
     {
         //varianta cu mode,
-        $categories = Categories::get();
-            dd($categories);
-        // varianta Query Builder
-        $games = DB::table('categories')
-        // in loc de games punem numele unui tabel din baza noastra de data
-        ->get();
+         $categories = Categories::get();
+        //     dd('sunt aici ?',$categories);
+        // // varianta Query Builder
+        // $games = DB::table('categories')
+        // // in loc de games punem numele unui tabel din baza noastra de data
+        // ->get();
 
-        dd("query builder way", $games);
+        // dd("query builder way", $games);
+
+
+        //Query BUilder vs Model
+     
+// QUery Builder
+        $categories = DB::table('categories')
+        ->get();
+// Model
+        $categories = Categories::get();
+
+        // folosesc return pentru a afisa contintul unei variabile
+        return $categories;
+
+        // detalii despre 
+       // https://stackoverflow.com/questions/38391710/laravel-eloquent-vs-query-builder-why-use-eloquent-to-decrease-performance
 
      return view('categories.index');
     }
@@ -48,8 +63,26 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        dd('store');
+        $newCat = new Categories;
+        // in clasa Categories cream un nou obiect
+        // in obiectul curent  pentru:
+        $newCat->id = 6;
+        // propietate id, atribuit valoarea 6
+        $newCat->name = 'Un alt nume';
+      //  propietate name, atribuit valoarea 'Un alt nume';
+        $newCat->categori_id = 7;
+        $newCat->game_id = 9;
+// pentru a salva valorile de mai sus pentru
+// propietatile de mai sus folosim :
+        $newCat->save();
+        // save () pentru a salva in tabela
+        // ce este legat la aceasta varabila
+        // la aceasta variabila
+        // fiind legata clasa, modelul
+        // categories
     }
+
+
 
     /**
      * Display the specified resource.
