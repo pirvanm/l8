@@ -29,8 +29,10 @@ class GenezaController extends Controller
      */
     public function index()
     {
-
+            // folosind clasa db table 
+            // luam datele dintr-un tabel al proiectului nostru 
         $games = DB::table('games')
+        // in loc de games punem numele unui tabel din baza noastra de data
         ->get();
 
         // get te ajuta sa transformi datele 
