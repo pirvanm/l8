@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // include datele din model , recunoaste clasa Categories ca fiind clasa
 // ce preia datele din tabel
+use Illuminate\Support\Facades\DB;
 use App\Models\Categories;
 
 class CategoriesController extends Controller
