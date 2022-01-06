@@ -17,6 +17,11 @@ class CategoriesController extends Controller
      */
     public function index()
     {
+
+        $Categorii = Categories::where('id',2)
+        ->get();
+
+        return $Categorii;
         //varianta cu mode,
         // $categories = Categories::get();
         //     dd('sunt aici ?',$categories);
@@ -45,6 +50,14 @@ class CategoriesController extends Controller
         // detalii despre 
        // https://stackoverflow.com/questions/38391710/laravel-eloquent-vs-query-builder-why-use-eloquent-to-decrease-performance
 
+
+
+       // scrieti un query folosind
+        // modelul categories 
+        // pentru a return doar categoria
+        //cu id 2
+
+        dd('buna marina');
      return view('categories.index');
     }
 
@@ -116,7 +129,10 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        Categories::where('id', 2)
+        ->update(['name' => 'actualizat']);
+         
+        
     }
 
     /**
@@ -128,7 +144,7 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd('buna sunt update');
     }
 
     /**
