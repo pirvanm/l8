@@ -52,7 +52,14 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        dd('create');
+        $newEntry = Categories::create(
+            [
+                'id' => 99,
+                 'name' => 'O poveste',
+                 'categori_id' => 22,
+                 'game_id' => 44
+            ]
+            );
     }
 
     /**
@@ -75,6 +82,9 @@ class CategoriesController extends Controller
 // pentru a salva valorile de mai sus pentru
 // propietatile de mai sus folosim :
         $newCat->save();
+
+        // a doua modalitate de inserare in baza de date
+
         // save () pentru a salva in tabela
         // ce este legat la aceasta varabila
         // la aceasta variabila
