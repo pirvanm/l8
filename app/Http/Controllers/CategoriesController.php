@@ -18,7 +18,7 @@ class CategoriesController extends Controller
     public function index()
     {
         //varianta cu mode,
-         $categories = Categories::get();
+        // $categories = Categories::get();
         //     dd('sunt aici ?',$categories);
         // // varianta Query Builder
         // $games = DB::table('categories')
@@ -27,6 +27,9 @@ class CategoriesController extends Controller
 
         // dd("query builder way", $games);
 
+
+            $listaCategory = Categories::where('id', 1)
+            ->get();
 
         //Query BUilder vs Model
      
@@ -37,7 +40,7 @@ class CategoriesController extends Controller
         $categories = Categories::get();
 
         // folosesc return pentru a afisa contintul unei variabile
-        return $categories;
+        return $listaCategory;
 
         // detalii despre 
        // https://stackoverflow.com/questions/38391710/laravel-eloquent-vs-query-builder-why-use-eloquent-to-decrease-performance
