@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 // ce preia datele din tabel
 use Illuminate\Support\Facades\DB;
 use App\Models\Categories;
+use Illuminate\Support\Facades\Redis;
 
 class CategoriesController extends Controller
 {
@@ -15,50 +16,16 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $r)
     {
 
-        $Categorii = Categories::where('id',2)
-        ->get();
+    
+        $Categorii = Categories::get();
 
-        return $Categorii;
-        //varianta cu mode,
-        // $categories = Categories::get();
-        //     dd('sunt aici ?',$categories);
-        // // varianta Query Builder
-        // $games = DB::table('categories')
-        // // in loc de games punem numele unui tabel din baza noastra de data
-        // ->get();
+        // cod pregatit pentru frotend(blade- ul de laravel);
 
-        // dd("query builder way", $games);
-
-
-            $listaCategory = Categories::where('id', 1)
-            ->get();
-
-        //Query BUilder vs Model
-     
-// QUery Builder
-        $categories = DB::table('categories')
-        ->get();
-// Model
-        $categories = Categories::get();
-
-        // folosesc return pentru a afisa contintul unei variabile
-        return $listaCategory;
-
-        // detalii despre 
-       // https://stackoverflow.com/questions/38391710/laravel-eloquent-vs-query-builder-why-use-eloquent-to-decrease-performance
-
-
-
-       // scrieti un query folosind
-        // modelul categories 
-        // pentru a return doar categoria
-        //cu id 2
-
-        dd('buna marina');
-     return view('categories.index');
+        return view('despre');
+   //  return view('categories.index');
     }
 
     /**
@@ -68,14 +35,14 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        $newEntry = Categories::create(
-            [
-                'id' => 99,
-                 'name' => 'O poveste',
-                 'categori_id' => 22,
-                 'game_id' => 44
-            ]
-            );
+        // $newEntry = Categories::create(
+        //     [
+        //         'id' => 99,
+        //          'name' => 'O poveste',
+        //          'categori_id' => 22,
+        //          'game_id' => 44
+        //     ]
+        //     );
     }
 
     /**
@@ -86,6 +53,8 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
+dd('store');
+   
         $newCat = new Categories;
         // in clasa Categories cream un nou obiect
         // in obiectul curent  pentru:
@@ -129,6 +98,8 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
+
+    
         Categories::where('id', 2)
         ->update(['name' => 'actualizat']);
          
