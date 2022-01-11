@@ -22,10 +22,12 @@ class CategoriesController extends Controller
     
         $Categorii = Categories::get();
 
+     
+
         // cod pregatit pentru frotend(blade- ul de laravel);
 
         //folder.fisier 
-        return view('categories.index');
+        return view('categories.index',compact("Categorii"));
    //  return view('categories.index');
     }
 
