@@ -24,7 +24,8 @@ class CategoriesController extends Controller
 
         // cod pregatit pentru frotend(blade- ul de laravel);
 
-        return view('despre');
+        //folder.fisier 
+        return view('categories.index');
    //  return view('categories.index');
     }
 
